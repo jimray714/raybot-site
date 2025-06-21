@@ -107,6 +107,16 @@
       color: #222;
       box-shadow: 0 8px 14px rgba(227,180,0,0.9);
     }
+    /* Styles for the PayPal button container to integrate visually */
+    .paypal-button-wrapper {
+        flex: 1 1 140px; /* Makes it act like your .bot-button */
+        /* PayPal will render its own button, but this wrapper helps layout */
+        min-height: 44px; /* Matches height of your .bot-button */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
     footer {
       margin-top: auto;
       text-align: center;
@@ -117,7 +127,7 @@
     }
     @media (max-width: 480px) {
       header h1 { font-size: 2.2rem; }
-      .bot-button { flex: 1 1 100%; }
+      .bot-button, .paypal-button-wrapper { flex: 1 1 100%; } /* Make it full width on small screens */
     }
   </style>
 </head>
@@ -141,7 +151,11 @@
     <button class="bot-button" onclick="handleInput('sops')">Buy SOPs/Guides</button>
     <button class="bot-button" onclick="handleInput('gear')">Recommended Gear</button>
     <button class="bot-button" onclick="handleInput('contact')">Leave Contact Info</button>
-  </div>
+
+    <div class="paypal-button-wrapper">
+      <div id="paypal-container-9LFNTJZRLTQES"></div>
+    </div>
+    </div>
   <input type="text" id="user-input" placeholder="Or type your question here..." />
 </div>
 
@@ -150,6 +164,21 @@
 </footer>
 
 <script>
+  // PayPal SDK Script (Part 1 of your PayPal code)
+  // This script must be loaded before you try to render the button.
+  // It's placed here in the body so the HTML element exists first.
+  const paypalSdkScript = document.createElement('script');
+  paypalSdkScript.src = "https://www.paypal.com/sdk/js?client-id=BAAdbZXg73401A7W88X8apF0A0TxCl6xbmw7m_6F4C9rvYZu2dvZQab487Czy19cq-FHc0RmtqJFLBU7P0&components=hosted-buttons&enable-funding=venmo&currency=USD";
+  document.body.appendChild(paypalSdkScript);
+
+  // Your PayPal button rendering script (Part 2 of your PayPal code)
+  paypalSdkScript.onload = () => {
+    paypal.HostedButtons({
+      hostedButtonId: "9LFNTJZRLTQES",
+    }).render("#paypal-container-9LFNTJZRLTQES");
+  };
+
+  // --- Your existing chat script below ---
   const chatLog = document.getElementById('chat-log');
   const userInput = document.getElementById('user-input');
 
