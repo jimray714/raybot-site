@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>RayBot - Cannabis Consultant Chatbot</title>
+  <title>Ask JimmyRay - Cannabis Consulting</title>
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -72,7 +72,7 @@
 <body>
   <div class="chatbox">
     <div class="chat-log" id="chat-log">
-      <div class="bot">RayBot: Welcome. What can I help you with today?</div>
+      <div class="bot">Ask JimmyRay: What do you need help with today?</div>
     </div>
     <div class="button-row">
       <button class="bot-button" onclick="handleInput('grow')">Start a Grow</button>
@@ -120,7 +120,7 @@
     function appendMessage(sender, text) {
       const msg = document.createElement('div');
       msg.className = sender;
-      msg.innerHTML = (sender === 'user' ? 'You: ' : 'RayBot: ') + text;
+      msg.innerHTML = (sender === 'user' ? 'You: ' : 'Ask JimmyRay: ') + text;
       chatLog.appendChild(msg);
       chatLog.scrollTop = chatLog.scrollHeight;
     }
