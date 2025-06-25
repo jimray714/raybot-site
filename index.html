@@ -1,227 +1,79 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Ask JimmyRay - Cannabis Consulting</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ask JimmyRay – SOP Bundle</title>
   <style>
-    * { box-sizing: border-box; }
     body {
       margin: 0;
-      font-family: 'Poppins', sans-serif;
-      background: linear-gradient(135deg, #1e4620 0%, #e3b400 50%, #b22a2a 100%);
-      color: #f5f5f5;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f4f4f4;
+      color: #333;
       display: flex;
       flex-direction: column;
-      min-height: 100vh;
       align-items: center;
-      justify-content: flex-start;
-      padding: 40px 20px 60px;
+      padding: 20px;
     }
     header {
       text-align: center;
       margin-bottom: 30px;
     }
     header h1 {
-      font-weight: 700;
-      font-size: 3rem;
-      text-transform: uppercase;
-      letter-spacing: 4px;
-      text-shadow: 2px 2px 8px rgba(0,0,0,0.6);
-      margin: 0;
+      font-size: 2.5em;
+      color: #14532d;
     }
     header p {
-      font-weight: 400;
-      font-size: 1.2rem;
-      margin-top: 8px;
-      font-style: italic;
-      text-shadow: 1px 1px 6px rgba(0,0,0,0.4);
+      font-size: 1.2em;
+      color: #4b5563;
     }
-    .chatbox {
-      background: rgba(0,0,0,0.7);
-      border-radius: 20px;
-      padding: 25px 30px;
-      width: 100%;
-      max-width: 650px;
-      box-shadow: 0 12px 20px rgba(0,0,0,0.7);
-      display: flex;
-      flex-direction: column;
-    }
-    .chat-log {
-      max-height: 400px;
-      overflow-y: auto;
-      margin-bottom: 20px;
-      padding-right: 10px;
-    }
-    .chat-log div {
-      margin-bottom: 14px;
-      line-height: 1.4;
-      font-size: 1rem;
-    }
-    .user {
-      text-align: right;
-      color: #a8d5a2;
-      font-weight: 600;
-    }
-    .bot {
-      text-align: left;
-      color: #f3d16b;
-      font-weight: 600;
-    }
-    input[type="text"] {
-      padding: 15px 18px;
+    .banner {
+      max-width: 100%;
+      height: auto;
       border-radius: 12px;
-      border: none;
-      font-size: 1rem;
-      font-weight: 500;
-      outline: none;
-      color: #222;
-      transition: box-shadow 0.3s ease;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      margin-bottom: 30px;
     }
-    input[type="text"]:focus {
-      box-shadow: 0 0 12px #e3b400;
-    }
-    .button-row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 15px;
-      margin-bottom: 15px;
-    }
-    .bot-button {
-      flex: 1 1 140px;
-      background: #b22a2a;
-      color: #fff;
-      font-weight: 700;
-      border: none;
-      border-radius: 12px;
-      padding: 12px 0;
-      cursor: pointer;
-      text-transform: uppercase;
-      letter-spacing: 1.2px;
-      box-shadow: 0 6px 10px rgba(178,42,42,0.8);
-      transition: background 0.3s ease, box-shadow 0.3s ease;
-    }
-    .bot-button:hover {
-      background: #e3b400;
-      color: #222;
-      box-shadow: 0 8px 14px rgba(227,180,0,0.9);
-    }
-    /* Styles for the PayPal button container to integrate visually */
-    .paypal-button-wrapper {
-        flex: 1 1 140px; /* Makes it act like your .bot-button */
-        /* PayPal will render its own button, but this wrapper helps layout */
-        min-height: 44px; /* Matches height of your .bot-button */
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-
-    footer {
-      margin-top: auto;
+    .btn-container {
       text-align: center;
-      color: #eee;
-      font-size: 0.9rem;
-      letter-spacing: 1.4px;
-      text-shadow: 1px 1px 4px rgba(0,0,0,0.6);
+      margin-top: 20px;
     }
-    @media (max-width: 480px) {
-      header h1 { font-size: 2.2rem; }
-      .bot-button, .paypal-button-wrapper { flex: 1 1 100%; } /* Make it full width on small screens */
+    .buy-button {
+      background: linear-gradient(to right, #27ae60, #219653);
+      color: white;
+      padding: 16px 32px;
+      border: none;
+      border-radius: 10px;
+      font-size: 18px;
+      font-weight: bold;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-block;
+    }
+    footer {
+      margin-top: 40px;
+      font-size: 0.9em;
+      color: #6b7280;
     }
   </style>
 </head>
 <body>
+  <header>
+    <h1>Ask JimmyRay</h1>
+    <p>Unlock the Ultimate Cannabis SOP Bundle – $99</p>
+  </header>
 
-<header>
-  <h1>Ask JimmyRay</h1>
-  <p>Over 20 Years of Cannabis Mastery</p>
-</header>
+  <img src="banner.png" alt="Ask JimmyRay SOPs" class="banner">
 
-<div class="chatbox">
-  <div class="chat-log" id="chat-log">
-    <div class="bot">Ask JimmyRay: What do you need help with today?</div>
+  <div class="btn-container">
+    <a href="YOUR_PAYPAL_LINK_HERE" target="_blank" class="buy-button">
+      💳 Buy the Ask JimmyRay SOP Bundle – $99
+    </a>
   </div>
-  <div class="button-row">
-    <button class="bot-button" onclick="handleInput('grow')">Start a Grow</button>
-    <button class="bot-button" onclick="handleInput('rosin')">Set Up Rosin Lab</button>
-    <button class="bot-button" onclick="handleInput('extraction')">Solventless Extraction</button>
-    <button class="bot-button" onclick="handleInput('compliance')">Cannabis Compliance</button>
-    <button class="bot-button" onclick="handleInput('book')">Book a Consult</button>
-    <button class="bot-button" onclick="handleInput('sops')">Buy SOPs/Guides</button>
-    <button class="bot-button" onclick="handleInput('gear')">Recommended Gear</button>
-    <button class="bot-button" onclick="handleInput('contact')">Leave Contact Info</button>
 
-    <div class="paypal-button-wrapper">
-      <div id="paypal-container-9LFNTJZRLTQES"></div>
-    </div>
-    </div>
-  <input type="text" id="user-input" placeholder="Or type your question here..." />
-</div>
-
-<footer>
-  &copy; 2025 JimmyRay • All Rights Reserved
-</footer>
-
-<script>
-  // PayPal SDK Script (Part 1 of your PayPal code)
-  // This script must be loaded before you try to render the button.
-  // It's placed here in the body so the HTML element exists first.
-  const paypalSdkScript = document.createElement('script');
-  paypalSdkScript.src = "https://www.paypal.com/sdk/js?client-id=BAAdbZXg73401A7W88X8apF0A0TxCl6xbmw7m_6F4C9rvYZu2dvZQab487Czy19cq-FHc0RmtqJFLBU7P0&components=hosted-buttons&enable-funding=venmo&currency=USD";
-  document.body.appendChild(paypalSdkScript);
-
-  // Your PayPal button rendering script (Part 2 of your PayPal code)
-  paypalSdkScript.onload = () => {
-    paypal.HostedButtons({
-      hostedButtonId: "9LFNTJZRLTQES",
-    }).render("#paypal-container-9LFNTJZRLTQES");
-  };
-
-  // --- Your existing chat script below ---
-  const chatLog = document.getElementById('chat-log');
-  const userInput = document.getElementById('user-input');
-
-  const responses = {
-    "grow": "To start a grow, choose indoor, outdoor, or mixed-light. Focus on lighting, environment, genetics, and compliance. Want a startup budget or gear list?",
-    "rosin": "For 5,000g runs, you'll need 2–3 commercial presses, cold room setup, filter bag workflow, and reliable plates. I’ve got a gear list and SOPs ready if you need them.",
-    "extraction": "Solventless starts with clean input — ice water hash or dry sift. Pressing involves heat, pressure, and micron control. I’ve got a full guide you can download.",
-    "compliance": "In California, you’ll need licensing, SOPs, secured facility, and track & trace readiness. I can provide a checklist or set you up with consulting.",
-    "book": "Let's get you scheduled. <a href=\"https://calendly.com/jimray714\" target=\"_blank\">Click here to book a consult</a> — first call's on the house.",
-    "sops": "You can grab Jimmy Ray’s official SOP templates and starter guides here: <a href=\"https://gumroad.com/your-link\" target=\"_blank\">Download Guides & SOPs</a>.",
-    "gear": "Check out the gear I trust and use: <a href=\"https://amzn.to/your-affiliate-link\" target=\"_blank\">Recommended Rosin & Grow Tools</a>. Purchases support the brand.",
-    "contact": "Drop your name, email, and what you’re looking for. Jimmy Ray reviews every submission himself. We'll get back to you with next steps.",
-    "default": "I got you. Ask about grows, rosin labs, gear, booking a consult, or how to grab digital resources."
-  };
-
-  userInput.addEventListener('keypress', function(e) {
-    if (e.key === 'Enter') {
-      const input = userInput.value.toLowerCase();
-      appendMessage('user', input);
-      respond(input);
-      userInput.value = '';
-    }
-  });
-
-  function handleInput(input) {
-    appendMessage('user', input);
-    respond(input);
-  }
-
-  function appendMessage(sender, text) {
-    const msg = document.createElement('div');
-    msg.className = sender;
-    msg.innerHTML = (sender === 'user' ? 'You: ' : 'Ask JimmyRay: ') + text;
-    chatLog.appendChild(msg);
-    chatLog.scrollTop = chatLog.scrollHeight;
-  }
-
-  function respond(input) {
-    const key = Object.keys(responses).find(k => input.includes(k));
-    const response = responses[key] || responses.default;
-    appendMessage('bot', response);
-  }
-</script>
-
+  <footer>
+    <p>All content is for educational purposes only. © 2025 Ask JimmyRay.</p>
+  </footer>
 </body>
 </html>
