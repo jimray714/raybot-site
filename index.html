@@ -13,26 +13,31 @@
       padding: 20px;
       text-align: center;
     }
+
     .banner {
       max-width: 100%;
+      height: auto;
       border-radius: 12px;
       box-shadow: 0 4px 12px rgba(0,0,0,0.1);
       margin-bottom: 30px;
     }
+
     .title {
       font-size: 2.2rem;
       color: #14532d;
       margin-bottom: 10px;
     }
+
     .subtitle {
       font-size: 1.2rem;
       color: #4b5563;
       margin-bottom: 20px;
     }
+
     .buy-button {
       background: linear-gradient(to right, #27ae60, #219653);
       color: white;
-      padding: 15px 25px;
+      padding: 15px 20px;
       font-size: 18px;
       font-weight: bold;
       text-decoration: none;
@@ -41,14 +46,24 @@
       display: inline-block;
       box-shadow: 0 4px 8px rgba(0,0,0,0.2);
       transition: background 0.3s ease;
+      white-space: nowrap;
     }
+
     .buy-button:hover {
       background: linear-gradient(to right, #1e874b, #1a7a42);
     }
+
     footer {
       margin-top: 40px;
       font-size: 0.9rem;
       color: #6b7280;
+    }
+
+    @media (max-width: 400px) {
+      .buy-button {
+        font-size: 16px;
+        padding: 12px 15px;
+      }
     }
   </style>
 </head>
@@ -56,10 +71,10 @@
   <h1 class="title">Ask JimmyRay</h1>
   <p class="subtitle">Unlock the Ultimate Cannabis SOP Bundle – $99</p>
 
-  <!-- Banner Image -->
+  <!-- Make sure this file is uploaded and named exactly 'banner.png' -->
   <img src="banner.png" alt="Ask JimmyRay SOPs" class="banner" />
 
-  <!-- Buy Button -->
+  <!-- Replace link below with your real PayPal button link -->
   <a href="YOUR_PAYPAL_LINK_HERE" target="_blank" class="buy-button">
     💳 Buy Now – $99
   </a>
